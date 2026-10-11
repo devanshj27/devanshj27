@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="banner-title banner-desc">
+  <title id="banner-title">Devansh Jaiswal · Control Systems Engineer</title>
+  <desc id="banner-desc">Embedded AI, robotics, computer vision and physics simulation. A drone hovers inside a green detection box on a radar-style display.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1120"/>
+      <stop offset="1" stop-color="#10203b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="960" cy="160" r="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#94a3b8" stroke-opacity="0.07"/>
+    </pattern>
+    <clipPath id="card">
+      <rect width="1200" height="320" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, 'Noto Sans', 'Liberation Sans', sans-serif; }
+    .mono { font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace; }
+    .sweep { transform-box: view-box; transform-origin: 960px 160px; animation: spin 6s linear infinite; }
+    .hover { animation: bob 4s ease-in-out infinite; }
+    .blink { animation: blink 1.2s steps(1, end) infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .sweep, .hover, .blink { animation: none; }
+    }
+  </style>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <rect width="1200" height="320" fill="url(#grid)"/>
+    <circle cx="960" cy="160" r="280" fill="url(#glow)"/>
+
+    <!-- range rings and axes -->
+    <g fill="none" stroke="#38bdf8">
+      <circle cx="960" cy="160" r="70" stroke-opacity="0.22"/>
+      <circle cx="960" cy="160" r="125" stroke-opacity="0.15"/>
+      <circle cx="960" cy="160" r="180" stroke-opacity="0.10"/>
+      <circle cx="960" cy="160" r="235" stroke-opacity="0.06"/>
+      <path d="M720 160H1200M960 0V320" stroke-opacity="0.12" stroke-dasharray="2 6"/>
+    </g>
+
+    <!-- radar sweep: leading edge at 0°, fading wedges trail behind it -->
+    <g class="sweep" fill="#38bdf8">
+      <path d="M960 160L1195 160A235 235 0 0 0 1191.43 119.19Z" fill-opacity="0.20"/>
+      <path d="M960 160L1191.43 119.19A235 235 0 0 0 1180.83 79.63Z" fill-opacity="0.12"/>
+      <path d="M960 160L1180.83 79.63A235 235 0 0 0 1163.52 42.5Z" fill-opacity="0.07"/>
+      <path d="M960 160L1163.52 42.5A235 235 0 0 0 1140.02 8.94Z" fill-opacity="0.035"/>
+      <path d="M960 160H1195" stroke="#38bdf8" stroke-opacity="0.55"/>
+    </g>
+
+    <!-- HUD frame corners -->
+    <path d="M20 44V20H44M1156 20H1180V44M20 276V300H44M1156 300H1180V276" fill="none" stroke="#334155" stroke-width="2"/>
+
+    <!-- recording indicator -->
+    <circle class="blink" cx="1118" cy="44" r="5" fill="#ef4444"/>
+    <text class="mono" x="1130" y="49" font-size="13" fill="#fca5a5" letter-spacing="1">REC</text>
+
+    <!-- tracked drone -->
+    <g class="hover">
+      <rect x="880" y="126" width="160" height="72" fill="#4ade80" fill-opacity="0.04" stroke="#4ade80" stroke-opacity="0.35" stroke-width="1.2"/>
+      <path d="M880 140V126H894M1026 126H1040V140M880 184V198H894M1026 198H1040V184" fill="none" stroke="#4ade80" stroke-width="3"/>
+      <rect x="880" y="104" width="58" height="20" rx="3" fill="#4ade80"/>
+      <text class="mono" x="909" y="118.5" font-size="13" font-weight="700" fill="#052e16" text-anchor="middle">drone</text>
+
+      <g fill="#e2e8f0">
+        <ellipse cx="914" cy="146" rx="26" ry="3" fill-opacity="0.45"/>
+        <ellipse cx="1006" cy="146" rx="26" ry="3" fill-opacity="0.45"/>
+        <rect x="911" y="146" width="6" height="9" rx="1.5" fill="#cbd5e1"/>
+        <rect x="1003" y="146" width="6" height="9" rx="1.5" fill="#cbd5e1"/>
+        <rect x="934" y="152" width="52" height="14" rx="5"/>
+        <rect x="958.5" y="141" width="3" height="11" fill="#94a3b8"/>
+        <circle cx="960" cy="140" r="4" fill="#94a3b8"/>
+      </g>
+      <path d="M890 146H938M982 146H1030" stroke="#f8fafc" stroke-opacity="0.8" stroke-width="1.5"/>
+      <g fill="none" stroke="#cbd5e1" stroke-linecap="round">
+        <path d="M936 158L915 154M984 158L1005 154" stroke-width="4"/>
+        <path d="M946 166L938 186M974 166L982 186M928 186H948M972 186H992" stroke-width="2.5"/>
+      </g>
+      <circle cx="960" cy="171" r="4.5" fill="#475569" stroke="#94a3b8" stroke-width="1.5"/>
+    </g>
+    <text class="mono" x="960" y="226" font-size="12.5" fill="#86efac" fill-opacity="0.85" text-anchor="middle">yolo11n · int8 · on-sensor · ~16 ms</text>
+
+    <!-- identity -->
+    <text class="mono" x="64" y="98" font-size="16" fill="#4ade80">&gt; devanshj27<tspan class="blink">_</tspan></text>
+    <text class="sans" x="62" y="160" font-size="60" font-weight="700" fill="#f8fafc" letter-spacing="-0.5">Devansh Jaiswal</text>
+    <text class="sans" x="64" y="200" font-size="24" fill="#94a3b8">Control Systems Engineer</text>
+
+    <g class="mono" font-size="14" text-anchor="middle">
+      <rect x="64" y="228" width="120" height="30" rx="15" fill="#0f1f3a" stroke="#1e3a5f"/>
+      <text x="124" y="248" fill="#cbd5e1">embedded AI</text>
+      <rect x="196" y="228" width="96" height="30" rx="15" fill="#0f1f3a" stroke="#1e3a5f"/>
+      <text x="244" y="248" fill="#cbd5e1">robotics</text>
+      <rect x="304" y="228" width="154" height="30" rx="15" fill="#0f1f3a" stroke="#1e3a5f"/>
+      <text x="381" y="248" fill="#cbd5e1">computer vision</text>
+      <rect x="470" y="228" width="120" height="30" rx="15" fill="#0f1f3a" stroke="#1e3a5f"/>
+      <text x="530" y="248" fill="#cbd5e1">physics sim</text>
+    </g>
+  </g>
+</svg>
